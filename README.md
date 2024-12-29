@@ -5,8 +5,24 @@ The basis of this little script is a quick dirty fix to a problem with debugging
 
 **Usage:**
 
-Simply add the script to your page as seen in the example index.html and it should just run on your next page load.
+Simply add the script to your page as seen in the example index.html and it should just run on your next page load (in the head tag)
 
+```
+<script src="slap-mobile-debugger.js" defer></script>
+```
+
+Then adding the following just before the ending body tag.
+
+```
+document.addEventListener('DOMContentLoaded', () => {
+    const debuggerInstance = new MobileDebugger({
+        suppressConsole: true,
+        suppressAlerts: true,
+        position: 'bottom-right',
+        margin: 20
+    });
+});
+```
 
 https://github.com/user-attachments/assets/4014634b-fcfb-42e9-91e6-e257cc0a7df9
 
