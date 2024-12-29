@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Debugger Example</title>
+    <script src="slap-mobile-debugger.js" defer></script>
+</head>
+
+<body>
+    <h1>Mobile Debugger Test Page</h1>
+    <p>Click the hamburger button to open the debugger overlay.</p>
+    <button id="console-button">Console Log Message</button>
+    <button id="alert-button">Alert Message</button>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const debuggerInstance = new MobileDebugger({
+            suppressConsole: true,
+            suppressAlerts: true,
+            position: 'bottom-right',
+            margin: 20
+        });
+
+        document.getElementById('console-button').addEventListener('click', () => {
+            console.log('Console log message');
+        });
+
+        document.getElementById('alert-button').addEventListener('click', () => {
+            alert('Alert message');
+        });
+    });
+</script>
+
+</html>
